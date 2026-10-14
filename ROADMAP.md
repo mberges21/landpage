@@ -49,13 +49,47 @@ Goal: clients log in, follow their project and download results; Marcelo uploads
 - [ ] Group cohorts and self-paced online courses (waitlist already collects interest).
 - [ ] Course booking / scheduling (e.g. calendar link after the free intro call).
 
-### Visibility
-- [ ] Events page with upcoming ecstatic dance sessions and gigs (Costa Blanca).
-- [ ] Listings on local event platforms (Meetup, Eventbrite, Facebook events) for every session.
-- [ ] Studio listing on a mixing marketplace (e.g. SoundBetter).
-- [ ] Simple analytics to see which page brings clients.
+### Traffic plan (agreed direction, 14 Oct 2026)
+Principle: every channel points to the **specific page** for that audience, never just the home page.
+Four sources: Google (people searching), social content, platforms where buyers already look, relationships/referrals.
+
+**Month 1 — foundations (on the site, Claude)**
+- [ ] Privacy-friendly analytics (GoatCounter or Plausible: no cookie banner needed) to see which channel brings clients.
+- [ ] Tracked links (UTM) for Instagram bio, WhatsApp, SoundBetter, listings — so each channel's visits are counted.
+- [ ] "Link in bio" page (`/links/`) styled like the site: Studio · Clases · Danza · Booking · Latest release.
+- [ ] Events page (`/events/` + `/es/eventos/`) for upcoming sessions and gigs — gives people a reason to come back.
 - [ ] WhatsApp contact button (needs the number).
-- [ ] Newsletter for releases, events and course launches.
+
+**Month 1 — foundations (Marcelo)**
+- [ ] Google Business Profile + first 5–10 reviews (students, dancers, clients).
+- [ ] Google Search Console + sitemap.
+- [ ] Website link everywhere: Instagram, SoundCloud, Spotify for Artists bio, Bandcamp, label artist pages, festival artist pages.
+
+**Month 2 — channels per business**
+- Studio (online, worldwide):
+  - [ ] SoundBetter profile.
+  - [ ] Short before/after reels.
+  - [ ] Ask labels / artists to credit "Mixed & mastered by Marcelo Bergés" with the link.
+  - [ ] Producer communities (organic house / downtempo groups, Discord).
+- Academy (Alicante + online):
+  - [ ] Profiles on Superprof and Tusclasesparticulares linking to `/es/academia/`.
+  - [ ] Free monthly Ableton masterclass in Alicante (or online) → collects emails.
+  - [ ] Short tips videos (Reels / YouTube Shorts).
+- Facilitation (local community):
+  - [ ] Every session on Meetup, Eventbrite and Facebook events, plus local conscious-community groups (Altea, Alicante, Dénia).
+  - [ ] Partnerships with yoga studios and retreat centres (they share your events, you play theirs).
+  - [ ] Photos / short clips after every session, location-tagged.
+- Perform (bookers):
+  - [ ] Direct outreach to Costa Blanca beach clubs, chiringuitos and festivals with the press kit link.
+  - [ ] Fresh SoundCloud mix every 1–2 months.
+  - [ ] Resident Advisor artist profile.
+
+**Month 3 — measure and double down**
+- [ ] Check analytics: which channel → which page → which enquiries. Keep the top 2 channels, drop the rest.
+- [ ] Newsletter (releases, events, course launches) from the waitlist and masterclass emails.
+- [ ] Evergreen articles that rank on Google, e.g. "Qué es la danza extática", "Cómo preparar tus stems para mezcla".
+
+**Weekly routine (2–3 h)**: 2 posts/reels that each link to one page · list next event · 1 outreach message (booker, studio, label) · ask 1 happy client for a review.
 
 ### Site maintenance
 - [ ] Put the page generator in the repo, so menu / footer / form changes are one edit instead of ten.
