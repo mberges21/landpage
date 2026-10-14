@@ -52,5 +52,12 @@
   </url>
   <url>
     <loc>https://marcelo-berges.com/presskit/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/presskit/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/presskit/"/>
+  </url>
+  <url>
+    <loc>https://marcelo-berges.com/es/presskit/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/presskit/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/presskit/"/>
   </url>
 </urlset>

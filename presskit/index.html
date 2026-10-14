@@ -6,6 +6,9 @@
 <title>Marcelo Bergés — Press Kit</title>
 <meta name="description" content="Press kit for Marcelo Bergés — producer, multi-instrumentalist and facilitator. Bio, formats, music, press photos and booking.">
 <link rel="canonical" href="https://marcelo-berges.com/presskit/">
+<link rel="alternate" hreflang="en" href="https://marcelo-berges.com/presskit/">
+<link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/presskit/">
+<link rel="alternate" hreflang="x-default" href="https://marcelo-berges.com/presskit/">
 <link rel="icon" type="image/png" href="/assets/img/favicon.png">
 <meta property="og:title" content="Marcelo Bergés — Press Kit">
 <meta property="og:description" content="Organic house, Andean instruments and ritual dance. Bio, music, photos and booking.">
@@ -24,6 +27,8 @@
 .pk-bar .nav-logo span { color:var(--ink); }
 .pk-bar-actions { display:flex; gap:10px; }
 .pk-bar .btn { padding:11px 16px; font-size:.66rem; }
+.pk-lang { font-family:'DM Mono',monospace; font-size:.66rem; letter-spacing:.16em; text-decoration:none; color:var(--ink); border:1px solid rgba(26,22,18,.25); padding:10px 11px; align-self:center; }
+.pk-lang:hover { border-color:var(--terra); color:var(--terra); }
 @media(max-width:600px) { .pk-bar .nav-logo span { display:none; } .pk-bar .btn-ghost { display:none; } }
 
 .cover { display:grid; grid-template-columns:1fr 1fr; min-height:calc(100vh - 64px); background:var(--bone); }
@@ -78,6 +83,9 @@
 @media(max-width:860px) { .photos { grid-template-columns:1fr 1fr; } }
 .photos figure { position:relative; overflow:hidden; background:var(--ink); }
 .photos img { width:100%; aspect-ratio:4/5; object-fit:cover; transition:transform .8s, opacity .4s; }
+.photos figure.feature { grid-column:span 2; grid-row:span 2; }
+.photos figure.feature img { position:absolute; inset:0; height:100%; aspect-ratio:auto; object-position:center 60%; }
+@media(max-width:860px) { .photos figure.feature { aspect-ratio:4/5; } }
 .photos figure:hover img { transform:scale(1.04); opacity:.8; }
 .photos a.dl { position:absolute; left:12px; bottom:12px; font-family:'DM Mono',monospace; font-size:.62rem; letter-spacing:.16em; text-transform:uppercase; color:var(--white); background:rgba(18,16,13,.7); padding:8px 12px; text-decoration:none; }
 .photos a.dl:hover { background:var(--terra); }
@@ -115,6 +123,7 @@
   <div class="wrap">
     <a href="/" class="nav-logo"><img src="/assets/img/symbol-light.png" alt=""><span>Marcelo Bergés</span></a>
     <div class="pk-bar-actions">
+      <a href="/es/presskit/" class="pk-lang" hreflang="es" lang="es" title="Español">ES</a>
       <button class="btn btn-ghost" onclick="window.print()">Save as PDF</button>
       <a href="#booking" class="btn btn-primary">Book Marcelo</a>
     </div>
@@ -302,6 +311,7 @@
       <p class="lead">Use these for flyers, line-up posts and event pages. Please credit "Marcelo Bergés".</p>
     </div>
     <div class="photos reveal">
+      <figure class="feature"><img src="/assets/img/guadalest-walk-bw.jpg" alt="Walking at sunrise in Guadalest, Alicante — black and white" loading="lazy"><a class="dl" href="/assets/img/guadalest-walk-bw.jpg" download>Download ↓</a></figure>
       <figure><img src="/assets/img/portrait-namaste.jpg" alt="Portrait, hands in prayer" loading="lazy"><a class="dl" href="/assets/img/portrait-namaste.jpg" download>Download ↓</a></figure>
       <figure><img src="/assets/img/dj-dome-green.jpg" alt="DJ set under green light" loading="lazy"><a class="dl" href="/assets/img/dj-dome-green.jpg" download>Download ↓</a></figure>
       <figure><img src="/assets/img/guadalest.jpg" alt="Portrait in Guadalest, Spain" loading="lazy"><a class="dl" href="/assets/img/guadalest.jpg" download>Download ↓</a></figure>
