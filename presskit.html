@@ -142,7 +142,7 @@
       <span class="eyebrow">A note from Marcelo</span>
       <h2 class="h-section" style="margin:18px 0 36px">Hola, <em>I'm Marcelo.</em></h2>
       <p>I picked up music with my first band at sixteen, and I've never put it down. Twenty-four years later, I'm still following the same thread: the search for depth — for the sound that makes people stop performing and start feeling.</p>
-      <p>I was born in Bogotá, grew up on the coasts of Costa Rica, and today I live in Spain. Fatherhood, heartbreak, inner work and a slow return to nature have all found their way into my music. You can hear it in the flutes, the charango, the guitar — and in the silences between them.</p>
+      <p>I was born in Bogotá, grew up on the coasts of Costa Rica, and today I live in Spain. Fatherhood, men's work, years of inner growth and a slow return to nature have all shaped who I am — and found their way into my music. You can hear it in the flutes, the charango, the guitar — and in the silences between them.</p>
       <p>When I play, I'm not trying to impress anyone. I'm listening — to the room, to the bodies, to what the moment is asking for. Some nights that's a deep organic groove at sunset. Other times it's a single flute, a breath, and a circle of people letting go together.</p>
       <p>If you're holding a space where people come to feel something real, I would love to be part of it.</p>
       <div class="signature-line">Con cariño, Marcelo<small>Music · Movement · Awareness</small></div>
@@ -272,8 +272,8 @@
         <iframe src="https://open.spotify.com/embed/artist/7DDff2V6L8Gj20uCcQkhZc?utm_source=generator&theme=0" width="100%" height="380" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Marcelo Bergés on Spotify"></iframe>
       </div>
       <div>
-        <div class="player-lbl">Niños — Original Mix · Organic House Records</div>
-        <iframe src="https://open.spotify.com/embed/album/76EQc8arZKTVR1gqVWiB2G?utm_source=generator&theme=0" width="100%" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Niños — Original Mix"></iframe>
+        <div class="player-lbl" data-latest-label>Latest release — Niños · Organic House Records</div>
+        <iframe data-latest-release src="https://open.spotify.com/embed/album/76EQc8arZKTVR1gqVWiB2G?utm_source=generator&theme=0" width="100%" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Niños — Original Mix"></iframe>
       </div>
     </div>
   </div>
@@ -357,6 +357,7 @@
   </div>
 </footer>
 
+<script src="assets/js/latest-release.js" defer></script>
 <script>
 const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } }), { threshold: .08 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));

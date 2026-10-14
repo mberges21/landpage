@@ -425,3 +425,12 @@ nav.scrolled .nav-links a.current { color:var(--terra); }
   linear-gradient(180deg, rgba(18,16,13,.5) 0%, transparent 25%, transparent 70%, var(--night) 100%); }
 @media(max-width:760px) { .page-hero.warm .hero-bg::after { background:linear-gradient(180deg, rgba(18,16,13,.55) 0%, rgba(18,16,13,.45) 40%, rgba(18,16,13,.92) 100%); } }
 .page-hero .eyebrow, .page-hero h1, .page-hero .lead, .hero-proof { text-shadow:0 1px 18px rgba(0,0,0,.55), 0 1px 3px rgba(0,0,0,.4); }
+
+/* ── CONTACT FORM STATES ── */
+.hp { position:absolute !important; left:-9999px !important; width:1px; height:1px; opacity:0; }
+.form button:disabled { opacity:.6; cursor:wait; }
+.form-note.error { color:var(--deep); }
+.form-note.error a { color:var(--terra); }
+.form-sent { text-align:center; padding:28px 8px; }
+.form-sent h3 { font-family:'Cormorant',serif; font-size:2.2rem; font-weight:600; margin:14px 0 10px; }
+.form-sent p { font-weight:300; color:var(--mid); line-height:1.8; max-width:400px; margin:0 auto; }

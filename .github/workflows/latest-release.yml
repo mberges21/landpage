@@ -1,0 +1,43 @@
+name: Update latest release
+
+on:
+  schedule:
+    - cron: '0 7 * * *'   # every day at 07:00 UTC
+  workflow_dispatch:       # "Run workflow" button in the Actions tab
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Ask Spotify for the newest release
+        env:
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+        run: |
+          if [ -z "$SPOTIFY_CLIENT_ID" ] || [ -z "$SPOTIFY_CLIENT_SECRET" ]; then
+            echo "::notice::Spotify secrets not set yet — skipping. Add SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET in Settings → Secrets and variables → Actions."
+            exit 0
+          fi
+          python3 scripts/update_latest_release.py
+
+      - name: Commit and publish if it changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet assets/data/latest-release.json; then
+            echo "No change."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/data/latest-release.json
+          git commit -m "Update latest release: $(python3 -c "import json;print(json.load(open('assets/data/latest-release.json'))['name'])")"
+          git push
+          # pushes made by this workflow's token don't always trigger a Pages rebuild, so ask for one
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" || true

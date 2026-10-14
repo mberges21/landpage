@@ -40,19 +40,37 @@ if (serviceSelect) {
   });
 }
 
-// Until a Formspree ID is set, fall back to opening the visitor's email app
+// Send the contact form straight to Marcelo's inbox (FormSubmit) and confirm on the page
 const form = document.getElementById('contactForm');
 if (form) {
-  form.addEventListener('submit', e => {
-    if (!form.action.includes('YOUR_FORM_ID')) return;
+  const status = document.getElementById('formStatus');
+  const button = form.querySelector('button[type="submit"]');
+  const buttonText = button.textContent;
+  form.addEventListener('submit', async e => {
     e.preventDefault();
     const d = new FormData(form);
-    const extra = [...d.entries()]
-      .filter(([k]) => !['name', 'email', 'service', 'message'].includes(k) && d.get(k))
-      .map(([k, v]) => `${k}: ${v}`).join('\n');
-    const subject = encodeURIComponent(`${d.get('service') || 'Enquiry'} — ${d.get('name')}`);
-    const body = encodeURIComponent(`${d.get('message')}\n\n${extra ? extra + '\n\n' : ''}— ${d.get('name')} (${d.get('email')})`);
-    window.location.href = `mailto:marcelo@marcelo-berges.com?subject=${subject}&body=${body}`;
+    if (d.get('_honey')) return; // spam bot filled the hidden field
+    d.set('_subject', `${d.get('service') || 'Enquiry'} — ${d.get('name')} · marcelo-berges.com`);
+    d.set('page', document.title);
+    button.disabled = true;
+    button.textContent = 'Sending…';
+    try {
+      const res = await fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: d,
+      });
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || String(json.success) === 'false') throw new Error(json.message || res.status);
+      form.innerHTML = `<div class="form-sent"><span class="eyebrow">Message received</span>
+        <h3>Thank you, ${(d.get('name') || '').toString().split(' ')[0].replace(/[<>&"]/g, '')}.</h3>
+        <p>Your message is on its way to me. I read every one personally and will get back to you soon.</p></div>`;
+    } catch (err) {
+      button.disabled = false;
+      button.textContent = buttonText;
+      status.innerHTML = 'Something went wrong sending your message. Please try again, or write to me at <a href="mailto:marcelo@marcelo-berges.com">marcelo@marcelo-berges.com</a>.';
+      status.classList.add('error');
+    }
   });
 }
 

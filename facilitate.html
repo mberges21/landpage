@@ -193,8 +193,11 @@
           <a href="https://www.instagram.com/marcelo_berges" target="_blank" rel="noopener"><small>Instagram</small>@marcelo_berges</a>
         </div>
       </div>
-      <form class="form reveal" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <form class="form reveal" id="contactForm" action="https://formsubmit.co/marcelo@marcelo-berges.com" method="POST">
         <input type="hidden" name="_subject" value="New enquiry — marcelo-berges.com">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="form-row">
           <div class="field"><label for="f-name">Name</label><input id="f-name" type="text" name="name" placeholder="Your name" autocomplete="name" required></div>
           <div class="field"><label for="f-email">Email</label><input id="f-email" type="email" name="email" placeholder="your@email.com" autocomplete="email" required></div>
@@ -218,7 +221,7 @@
         </div>
         <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message" placeholder="Type of event, location, intention for the session…" required></textarea></div>
         <button type="submit" class="btn btn-primary">Send enquiry</button>
-        <p class="form-note">I reply personally — no automated sales funnel.</p>
+        <p class="form-note" id="formStatus" role="status" aria-live="polite">I reply personally — no automated sales funnel.</p>
       </form>
     </div>
   </div>
