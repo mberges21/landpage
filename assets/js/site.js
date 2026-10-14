@@ -8,9 +8,10 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
 
 // Mark the current page in the nav
-const page = location.pathname.split('/').pop() || 'index.html';
+const here = location.pathname.replace(/index\.html$/, '');
 document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(a => {
-  if (a.getAttribute('href') === page) a.classList.add('current');
+  const href = a.getAttribute('href');
+  if (href && href.length > 4 && href === here) a.classList.add('current');
 });
 
 // Nav background on scroll + sticky mobile CTA once past the hero

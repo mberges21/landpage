@@ -11,46 +11,46 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/"/>
   </url>
   <url>
-    <loc>https://marcelo-berges.com/perform.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/perform.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/actuaciones.html"/>
+    <loc>https://marcelo-berges.com/perform/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/perform/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/actuaciones/"/>
   </url>
   <url>
-    <loc>https://marcelo-berges.com/es/actuaciones.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/perform.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/actuaciones.html"/>
+    <loc>https://marcelo-berges.com/es/actuaciones/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/perform/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/actuaciones/"/>
   </url>
   <url>
-    <loc>https://marcelo-berges.com/facilitate.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/facilitate.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/danza-y-rituales.html"/>
+    <loc>https://marcelo-berges.com/facilitate/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/facilitate/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/danza-y-rituales/"/>
   </url>
   <url>
-    <loc>https://marcelo-berges.com/es/danza-y-rituales.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/facilitate.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/danza-y-rituales.html"/>
+    <loc>https://marcelo-berges.com/es/danza-y-rituales/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/facilitate/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/danza-y-rituales/"/>
   </url>
   <url>
-    <loc>https://marcelo-berges.com/studio.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/studio.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/estudio.html"/>
+    <loc>https://marcelo-berges.com/studio/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/studio/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/estudio/"/>
   </url>
   <url>
-    <loc>https://marcelo-berges.com/es/estudio.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/studio.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/estudio.html"/>
+    <loc>https://marcelo-berges.com/es/estudio/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/studio/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/estudio/"/>
   </url>
   <url>
-    <loc>https://marcelo-berges.com/academy.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/academy.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/academia.html"/>
+    <loc>https://marcelo-berges.com/academy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/academy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/academia/"/>
   </url>
   <url>
-    <loc>https://marcelo-berges.com/es/academia.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/academy.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/academia.html"/>
+    <loc>https://marcelo-berges.com/es/academia/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/academy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/academia/"/>
   </url>
   <url>
-    <loc>https://marcelo-berges.com/presskit.html</loc>
+    <loc>https://marcelo-berges.com/presskit/</loc>
   </url>
 </urlset>
