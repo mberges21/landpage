@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@400;500&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/site.css?v=20261014b">
+<link rel="stylesheet" href="/assets/css/site.css?v=20261014c">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -374,11 +374,13 @@
         <input type="hidden" name="_subject" value="New enquiry — marcelo-berges.com">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_autoresponse" value="Hi! This is a quick confirmation that your message reached me. I read every message personally and will get back to you soon. — Marcelo Bergés · marcelo-berges.com">
         <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="form-row">
           <div class="field"><label for="f-name">Name</label><input id="f-name" type="text" name="name" placeholder="Your name" autocomplete="name" required></div>
-          <div class="field"><label for="f-email">Email</label><input id="f-email" type="email" name="email" placeholder="your@email.com" autocomplete="email" required></div>
+          <div class="field"><label for="f-email">Email</label><input id="f-email" type="email" name="email" placeholder="your@email.com" autocomplete="email" spellcheck="false" required><p class="email-hint" id="emailHint" hidden></p></div>
         </div>
+        <div class="field"><label for="f-phone">WhatsApp / phone <span class="opt">(optional)</span></label><input id="f-phone" type="tel" name="phone" placeholder="+34 …" autocomplete="tel"></div>
         <div class="field">
           <label for="f-service">I'm interested in</label>
           <select id="f-service" name="service" required>
@@ -445,7 +447,7 @@
 
 <a href="#contact" class="btn btn-primary sticky-cta" data-service="Coaching — Free 20-min intro call">Free intro call</a>
 
-<script src="/assets/js/site.js?v=20261014b"></script>
-<script src="/assets/js/latest-release.js?v=20261014b"></script>
+<script src="/assets/js/site.js?v=20261014c"></script>
+<script src="/assets/js/latest-release.js?v=20261014c"></script>
 </body>
 </html>
