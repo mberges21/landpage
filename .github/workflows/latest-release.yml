@@ -15,16 +15,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Ask Spotify for the newest release
-        env:
-          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
-          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
-        run: |
-          if [ -z "$SPOTIFY_CLIENT_ID" ] || [ -z "$SPOTIFY_CLIENT_SECRET" ]; then
-            echo "::notice::Spotify secrets not set yet — skipping. Add SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET in Settings → Secrets and variables → Actions."
-            exit 0
-          fi
-          python3 scripts/update_latest_release.py
+      - name: Check Deezer for the newest release
+        run: python3 scripts/update_latest_release.py
 
       - name: Commit and publish if it changed
         env:

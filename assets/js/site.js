@@ -41,6 +41,15 @@ if (serviceSelect) {
 }
 
 // Send the contact form straight to Marcelo's inbox (FormSubmit) and confirm on the page
+const L = document.documentElement.lang === 'es' ? {
+  sending: 'Enviando…', received: 'Mensaje recibido', thanks: 'Gracias',
+  body: 'Tu mensaje ya está en camino. Leo cada uno personalmente y te responderé pronto.',
+  error: 'Algo ha fallado al enviar tu mensaje. Inténtalo de nuevo o escríbeme a',
+} : {
+  sending: 'Sending…', received: 'Message received', thanks: 'Thank you',
+  body: 'Your message is on its way to me. I read every one personally and will get back to you soon.',
+  error: 'Something went wrong sending your message. Please try again, or write to me at',
+};
 const form = document.getElementById('contactForm');
 if (form) {
   const status = document.getElementById('formStatus');
@@ -53,7 +62,7 @@ if (form) {
     d.set('_subject', `${d.get('service') || 'Enquiry'} — ${d.get('name')} · marcelo-berges.com`);
     d.set('page', document.title);
     button.disabled = true;
-    button.textContent = 'Sending…';
+    button.textContent = L.sending;
     try {
       const res = await fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
         method: 'POST',
@@ -62,13 +71,14 @@ if (form) {
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok || String(json.success) === 'false') throw new Error(json.message || res.status);
-      form.innerHTML = `<div class="form-sent"><span class="eyebrow">Message received</span>
-        <h3>Thank you, ${(d.get('name') || '').toString().split(' ')[0].replace(/[<>&"]/g, '')}.</h3>
-        <p>Your message is on its way to me. I read every one personally and will get back to you soon.</p></div>`;
+      const first = (d.get('name') || '').toString().split(' ')[0].replace(/[<>&"]/g, '');
+      form.innerHTML = `<div class="form-sent"><span class="eyebrow">${L.received}</span>
+        <h3>${L.thanks}, ${first}.</h3>
+        <p>${L.body}</p></div>`;
     } catch (err) {
       button.disabled = false;
       button.textContent = buttonText;
-      status.innerHTML = 'Something went wrong sending your message. Please try again, or write to me at <a href="mailto:marcelo@marcelo-berges.com">marcelo@marcelo-berges.com</a>.';
+      status.innerHTML = `${L.error} <a href="mailto:marcelo@marcelo-berges.com">marcelo@marcelo-berges.com</a>.`;
       status.classList.add('error');
     }
   });

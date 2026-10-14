@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://marcelo-berges.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/"/>
+  </url>
+  <url>
+    <loc>https://marcelo-berges.com/es/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/"/>
+  </url>
+  <url>
+    <loc>https://marcelo-berges.com/perform.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/perform.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/actuaciones.html"/>
+  </url>
+  <url>
+    <loc>https://marcelo-berges.com/es/actuaciones.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/perform.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/actuaciones.html"/>
+  </url>
+  <url>
+    <loc>https://marcelo-berges.com/facilitate.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/facilitate.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/danza-y-rituales.html"/>
+  </url>
+  <url>
+    <loc>https://marcelo-berges.com/es/danza-y-rituales.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/facilitate.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/danza-y-rituales.html"/>
+  </url>
+  <url>
+    <loc>https://marcelo-berges.com/studio.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/studio.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/estudio.html"/>
+  </url>
+  <url>
+    <loc>https://marcelo-berges.com/es/estudio.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/studio.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/estudio.html"/>
+  </url>
+  <url>
+    <loc>https://marcelo-berges.com/academy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/academy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/academia.html"/>
+  </url>
+  <url>
+    <loc>https://marcelo-berges.com/es/academia.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/academy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/academia.html"/>
+  </url>
+  <url>
+    <loc>https://marcelo-berges.com/presskit.html</loc>
+  </url>
+</urlset>
