@@ -1,0 +1,64 @@
+{
+  "products": [
+    {
+      "id": 484133521,
+      "key": "kamatjui",
+      "name": "Kamatjui",
+      "garment": "Cotton Heritage M2480",
+      "images": [
+        {
+          "src": "/assets/img/merch/kamatjui-mockup.jpg",
+          "label": "mockup"
+        },
+        {
+          "src": "/assets/img/merch/kamatjui-front-print.jpg",
+          "label": "front"
+        }
+      ],
+      "variants": [
+        {
+          "id": 5589607241,
+          "size": "S",
+          "colour": "Team Red",
+          "price": 49.0,
+          "currency": "EUR"
+        },
+        {
+          "id": 5589607242,
+          "size": "M",
+          "colour": "Team Red",
+          "price": 49.0,
+          "currency": "EUR"
+        },
+        {
+          "id": 5589607243,
+          "size": "L",
+          "colour": "Team Red",
+          "price": 49.0,
+          "currency": "EUR"
+        },
+        {
+          "id": 5589607244,
+          "size": "XL",
+          "colour": "Team Red",
+          "price": 49.0,
+          "currency": "EUR"
+        },
+        {
+          "id": 5589607245,
+          "size": "2XL",
+          "colour": "Team Red",
+          "price": 51.5,
+          "currency": "EUR"
+        },
+        {
+          "id": 5589607246,
+          "size": "3XL",
+          "colour": "Team Red",
+          "price": 53.5,
+          "currency": "EUR"
+        }
+      ]
+    }
+  ]
+}

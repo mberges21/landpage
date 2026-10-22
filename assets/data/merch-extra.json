@@ -1,0 +1,14 @@
+{
+  "kamatjui": {
+    "en": {
+      "type": "Crewneck sweatshirt",
+      "desc": "Wear the Kamatjui album. The full artwork on the front, the star mark on the back, my circle symbol and the KAMATJUI title on the sleeves.",
+      "details": ["Colour: red", "Unisex fit", "Printed on four sides", "Printed on demand in Europe"]
+    },
+    "es": {
+      "type": "Sudadera de cuello redondo",
+      "desc": "Lleva puesto el álbum Kamatjui. La obra completa en el frente, la estrella en la espalda, mi símbolo circular y el título KAMATJUI en las mangas.",
+      "details": ["Color: rojo", "Corte unisex", "Impresa en cuatro lados", "Impresión bajo demanda en Europa"]
+    }
+  }
+}

@@ -1,4 +1,4 @@
-name: Update latest release
+name: Update latest release + Bandcamp
 
 on:
   schedule:
@@ -18,18 +18,21 @@ jobs:
       - name: Check Deezer for the newest release
         run: python3 scripts/update_latest_release.py
 
+      - name: Refresh Bandcamp releases for the shop
+        run: python3 scripts/sync_bandcamp.py || echo "::warning::Bandcamp sync failed — shop keeps the last list"
+
       - name: Commit and publish if it changed
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if git diff --quiet assets/data/latest-release.json; then
+          if git diff --quiet assets/data/latest-release.json assets/data/bandcamp.json; then
             echo "No change."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/data/latest-release.json
-          git commit -m "Update latest release: $(python3 -c "import json;print(json.load(open('assets/data/latest-release.json'))['name'])")"
+          git add assets/data/latest-release.json assets/data/bandcamp.json
+          git commit -m "Update latest release / Bandcamp list"
           git push
           # pushes made by this workflow's token don't always trigger a Pages rebuild, so ask for one
           gh api -X POST "repos/${{ github.repository }}/pages/builds" || true

@@ -6,6 +6,10 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
 // Mobile menu
 function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+document.querySelectorAll('.hamburger, .mobile-menu .close').forEach(b => b.addEventListener('click', toggleMenu));
+document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', () => {
+  document.getElementById('mobileMenu').classList.remove('open');
+}));
 
 // Mark the current page in the nav
 const here = location.pathname.replace(/index\.html$/, '');

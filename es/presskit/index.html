@@ -2,6 +2,8 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://open.spotify.com https://bandcamp.com; connect-src 'self' https://formsubmit.co; form-action https://formsubmit.co; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Marcelo Bergés — Press Kit · Dossier de prensa</title>
 <meta name="description" content="Press kit de Marcelo Bergés — productor, multiinstrumentista y facilitador en la Costa Blanca. Bio, formatos, música, fotos de prensa y contratación.">
@@ -19,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@400;500&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/site.css?v=20261014c">
+<link rel="stylesheet" href="/assets/css/site.css?v=20261022c">
 <style>
 /* ── PRESS KIT ── */
 .pk-bar { position:sticky; top:0; z-index:50; background:rgba(247,244,238,.94); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--line); }
@@ -125,7 +127,7 @@
     <a href="/es/" class="nav-logo"><img src="/assets/img/symbol-light.png" alt=""><span>Marcelo Bergés</span></a>
     <div class="pk-bar-actions">
       <a href="/presskit/" class="pk-lang" hreflang="en" lang="en" title="English">EN</a>
-      <button class="btn btn-ghost" onclick="window.print()">Guardar en PDF</button>
+      <button class="btn btn-ghost" data-print>Guardar en PDF</button>
       <a href="#booking" class="btn btn-primary">Contratar</a>
     </div>
   </div>
@@ -380,20 +382,7 @@
   </div>
 </footer>
 
-<script src="/assets/js/latest-release.js?v=20261014c" defer></script>
-<script>
-const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } }), { threshold: .08 });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-window.addEventListener('beforeprint', () => document.querySelectorAll('.reveal').forEach(el => el.classList.add('on')));
-
-document.querySelectorAll('.copy-btn').forEach(btn => btn.addEventListener('click', async () => {
-  const text = [...document.getElementById(btn.dataset.copy).querySelectorAll('p')].map(p => p.textContent.trim()).join('\n\n');
-  try { await navigator.clipboard.writeText(text); btn.textContent = 'Copiado ✓'; }
-  catch { btn.textContent = 'Selecciona y copia'; }
-  setTimeout(() => btn.textContent = 'Copiar', 2000);
-}));
-
-document.querySelectorAll('.yr').forEach(el => el.textContent = new Date().getFullYear());
-</script>
+<script src="/assets/js/latest-release.js?v=20261022a" defer></script>
+<script src="/assets/js/presskit.js?v=20261022a"></script>
 </body>
 </html>

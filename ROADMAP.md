@@ -72,9 +72,21 @@ Goal: a "Shop / Tienda" tab with shirts, cups etc., printed and shipped on deman
 - **Open — payouts & tax:** Marcelo is registered self-employed in Costa Rica with Costa Rican bank accounts, but lives in Spain. Shopify Payments needs a bank account in a supported country (Costa Rica isn't one) → likely PayPal as payment method, or a Spanish/EU account. Spanish tax residency / IVA obligations to confirm with a gestor before launch.
 - Art rights: covers = Marcelo's; AI images made with Leonardo (some Gemini / Flux) — confirm the plan used allowed commercial use.
 - [x] Decide platform (Shopify + Printful, own design).
-- [ ] Step 1 — Printful account + first products (free, no payment details needed).
-- [ ] Step 2 — Shopify trial + store basics (after payout question is clear).
-- [ ] Step 3 — Buy Button → Claude builds /shop/ + /es/tienda/ + legal pages.
+- **Decided (22 Oct): no Shopify (paid) → manual ordering first.** Shop on GitHub Pages; customer sends an order request (FormSubmit) with items + address; Marcelo replies with a PayPal payment link and places the order in Printful by hand. Later: automate with PayPal checkout + free Cloudflare Worker + Printful API.
+- [x] Printful account + store "Manual order platform / API"; read-only API token in `tools/printful-token.txt` (git-ignored).
+- [x] `scripts/sync_printful.py` pulls products, sizes, prices and mockups into `assets/data/merch.json` + `assets/img/merch/`. Re-run after any change in Printful: `SSL_CERT_FILE=/etc/ssl/cert.pem python3 scripts/sync_printful.py`. Product texts (EN/ES) live in `assets/data/merch-extra.json`.
+- [x] Shop pages `/shop/` + `/es/tienda/` with Shop/Tienda tab on every page; first product: Kamatjui crewneck (€49–53.50).
+- **Automation path (saved 22 Oct — do NOT build manual-order flow long term):**
+  1. Now: PayPal checkout on the shop page (PayPal JS SDK, Client ID only — public, safe). Customer pays on the site; Marcelo gets PayPal's payment email with items + address; he places it in Printful (check paid amount matches before fulfilling).
+  2. Next: free Cloudflare Worker (no hosting cost, site stays on GitHub) that (a) recomputes prices from Printful server-side, (b) creates + captures the PayPal order, (c) creates the Printful order automatically. Needs: PayPal Client ID + Secret, Printful token with "View and manage orders" — both stored as Worker secrets, never in the repo.
+  3. Then: Printful webhook → shipping/tracking email to customer; remove the manual step entirely.
+- [ ] Legal pages before announcing: aviso legal, privacy, terms of sale, shipping & returns (needs Marcelo's legal name / NIF / address).
+- [ ] Decide shipping prices (Spain / EU / rest) from Printful's rates.
+- [x] Bandcamp section on the shop ("Exclusive edits & remixes"): `scripts/sync_bandcamp.py` → `assets/data/bandcamp.json`, refreshed daily by the GitHub Action; listen in-page, buy on Bandcamp.
+- Note: edits of other artists' songs (Facundo Cabral, Tears for Fears, La Masa…) — selling them needs the rights holders' OK; consider name-your-price/free or promo-only.
+- [ ] PayPal checkout on the shop (needs Marcelo's PayPal **Live Client ID** — public, safe to share).
+- [ ] Brand background texture (Marcelo feels the plain cream doesn't reflect his branding) — options proposed 22 Oct.
+- [ ] Add more products in Printful (shirts, posters, mugs, totes) → re-run sync.
 - [ ] Accounts connected (Shopify ↔ Printful), first products with mockups.
 - [ ] Build `/shop/` + `/es/tienda/` pages, nav tab, legal pages.
 - [ ] Test order end to end.
@@ -124,6 +136,13 @@ Four sources: Google (people searching), social content, platforms where buyers 
 - [ ] Evergreen articles that rank on Google, e.g. "Qué es la danza extática", "Cómo preparar tus stems para mezcla".
 
 **Weekly routine (2–3 h)**: 2 posts/reels that each link to one page · list next event · 1 outreach message (booker, studio, label) · ask 1 happy client for a review.
+
+### Security (hardened 22 Oct)
+- [x] Content-Security-Policy on every page (only own scripts; fonts, Spotify, Bandcamp, FormSubmit allowed); all inline scripts/handlers removed; referrer policy. Verified: no violations on 12 pages, injected scripts blocked.
+- [x] Secrets never in repo: Printful token in git-ignored `tools/`; Spotify keys unused.
+- [ ] **Marcelo: GitHub → repo Settings → Pages → tick "Enforce HTTPS"** (http:// currently does not redirect to https://).
+- [ ] After FormSubmit activation, switch forms to FormSubmit's random alias so the email address isn't in the page source.
+- When adding PayPal: add `https://www.paypal.com https://*.paypal.com https://*.paypalobjects.com` to script-src / frame-src / connect-src / img-src in the CSP.
 
 ### Site maintenance
 - [ ] Put the page generator in the repo, so menu / footer / form changes are one edit instead of ten.

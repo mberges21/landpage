@@ -60,4 +60,14 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/presskit/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/presskit/"/>
   </url>
+  <url>
+    <loc>https://marcelo-berges.com/shop/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/shop/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/tienda/"/>
+  </url>
+  <url>
+    <loc>https://marcelo-berges.com/es/tienda/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/shop/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/tienda/"/>
+  </url>
 </urlset>
