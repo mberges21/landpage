@@ -51,6 +51,13 @@ Goal: a "Shop / Tienda" tab with shirts, cups etc., printed and shipped on deman
 - Alternatives: Fourthwall or Printify Pop-Up (free hosted shop on e.g. `shop.marcelo-berges.com`, less design control); fully custom Stripe + Printful API (most control, needs a server function and VAT handling — not worth it at the start).
 - Needs from Marcelo: decide platform; Shopify + Printful accounts; **high-res / vector artwork** (current logo PNGs are too small to print: symbol 199 px, wordmark 900 px); product picks; business details for legal pages (aviso legal, privacy, shipping & returns, terms).
 - Note: merch shows prices — confirm this is fine (the no-pricing rule was for services).
+- Artwork review (22 Oct): candidate designs are ~1000 px (too small except for chest logos / stickers / small mugs).
+  Best picks: triangle/diamond mark and interwoven star (vectorise), Gratitud and La gema (need 3000 px originals), unspoken-needs swirl.
+  Skip or fix: compass mandala (AI gibberish text), diamond eye ("MARCÉLO" accent typo), glass-lines piece.
+  **Kamatjui** cover is print-ready: cropped 2980 × 2980 master saved in `../merch-artwork/` (outside the public repo) → posters / art prints / totes.
+  Check commercial-use rights: AI tool terms for AI images, and the illustrator's permission for commissioned covers (e.g. Kamatjui).
+- [ ] Get 3000 px originals of Gratitud, La gema de la esperanza, unspoken needs.
+- [ ] Vectorise symbol marks + circle logo (potrace via Homebrew — ask before installing).
 - [ ] Decide platform and product range.
 - [ ] Accounts connected (Shopify ↔ Printful), first products with mockups.
 - [ ] Build `/shop/` + `/es/tienda/` pages, nav tab, legal pages.
