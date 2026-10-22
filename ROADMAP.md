@@ -45,6 +45,17 @@ Goal: clients log in, follow their project and download results; Marcelo uploads
 - [ ] Add the "Client area" button (EN / ES).
 - [ ] Revisit Option B once there are regular clients across several services.
 
+### Merch shop (requested 22 Oct 2026 — planning)
+Goal: a "Shop / Tienda" tab with shirts, cups etc., printed and shipped on demand (no stock, no shipping by Marcelo).
+- Recommended setup: **Shopify (Starter plan) + Printful**, products embedded on `/shop/` and `/es/tienda/` with Shopify's Buy Button; checkout, payment and EU VAT handled by Shopify; Printful prints in its EU facilities and ships automatically.
+- Alternatives: Fourthwall or Printify Pop-Up (free hosted shop on e.g. `shop.marcelo-berges.com`, less design control); fully custom Stripe + Printful API (most control, needs a server function and VAT handling — not worth it at the start).
+- Needs from Marcelo: decide platform; Shopify + Printful accounts; **high-res / vector artwork** (current logo PNGs are too small to print: symbol 199 px, wordmark 900 px); product picks; business details for legal pages (aviso legal, privacy, shipping & returns, terms).
+- Note: merch shows prices — confirm this is fine (the no-pricing rule was for services).
+- [ ] Decide platform and product range.
+- [ ] Accounts connected (Shopify ↔ Printful), first products with mockups.
+- [ ] Build `/shop/` + `/es/tienda/` pages, nav tab, legal pages.
+- [ ] Test order end to end.
+
 ### Academy
 - [ ] Group cohorts and self-paced online courses (waitlist already collects interest).
 - [ ] Course booking / scheduling (e.g. calendar link after the free intro call).
