@@ -1,0 +1,5 @@
+# Local working files — kept in the project folder but never uploaded to GitHub (the repo is public)
+/merch-artwork/
+/tools/
+/.codegraph/
+.DS_Store
