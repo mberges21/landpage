@@ -518,3 +518,83 @@ nav.scrolled .nav-links a.lang-switch { border-color:rgba(26,22,18,.25); }
 .bc-listen { background:none; border:1px solid var(--line-d); color:var(--white); font-family:'DM Mono',monospace; font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; padding:9px 12px; cursor:pointer; }
 .bc-listen:hover { border-color:var(--terra2); color:var(--terra2); }
 .bc-more { margin-top:32px; }
+
+/* ══ THEME: "Dusk & ritual" — warm earth, firelight glow, faint symbol (approved 23 Oct 2026) ══ */
+:root {
+  --bg:#2b211a; --bg2:#33281f; --bone:#33281f; --white:#f3ebdf;
+  --ink:#efe6d8; --ink2:#d8ccb9; --mid:#c9b59d; --clay:#b8987a;
+  --line:rgba(239,230,216,.10); --line-d:rgba(239,230,216,.12);
+  --card:#3a2d23;
+}
+body {
+  background-color:#2b211a;
+  background-image:
+    radial-gradient(1100px 700px at 85% -10%, rgba(232,140,70,.24), transparent 60%),
+    radial-gradient(900px 600px at -10% 40%, rgba(206,100,40,.16), transparent 60%),
+    radial-gradient(1000px 700px at 60% 110%, rgba(150,75,25,.26), transparent 60%);
+  background-attachment:fixed;
+}
+/* fine earth grain over everything, very faint */
+body::before { content:''; position:fixed; inset:0; pointer-events:none; z-index:1; opacity:.07;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+nav, .mobile-menu, .sticky-cta { z-index:999; }
+
+.bg-bone { background:rgba(58,44,34,.6); }
+.bg-ink  { background:#221a14; }
+.bg-night{ background:#1e1712; }
+
+/* cards & panels */
+.path, .course, .form, .merch-card, .cart, .price-box, .bio-card, .gift, .tier { background:var(--card); border-color:var(--line); }
+.offer, .for-who div { background:var(--card); }
+.offer:hover { background:#45362a; }
+.path.featured, .course.dark { background:#4a3222; border-color:rgba(224,122,60,.25); }
+.path:hover, .course:hover { box-shadow:0 30px 70px -30px rgba(224,122,60,.25); }
+.merch-main, .merch-thumbs .thumb { background:#45372b; }
+.philosophy { background:var(--card); }
+.stats .stat, .stat { border-color:var(--line); }
+
+/* forms */
+.field input, .field textarea, .field select, .merch-qty input { background:#2b211a; border-color:rgba(239,230,216,.16); color:var(--ink); }
+.merch-sizes .size { border-color:rgba(239,230,216,.25); color:var(--ink); }
+.merch-sizes .size.on { background:var(--terra); border-color:var(--terra); color:#fff; }
+
+/* buttons */
+.btn-dark { background:#efe6d8; color:#2b211a; }
+.btn-dark:hover { background:var(--terra2); color:#13100c; }
+.btn-ghost { background:transparent; border-color:rgba(239,230,216,.3); color:var(--ink); }
+.btn-ghost:hover { background:#efe6d8; color:#13100c; }
+
+/* nav */
+nav.scrolled { background:rgba(43,33,26,.92); border-color:var(--line); }
+nav.scrolled .nav-logo img { filter:none; opacity:1; }
+nav.scrolled .nav-links a { color:var(--mid); }
+nav.scrolled .hamburger span { background:var(--ink); }
+nav.scrolled .nav-links a.lang-switch { border-color:rgba(239,230,216,.25); }
+
+/* your symbol as a faint ritual watermark */
+#work, #about, #products { position:relative; overflow:hidden; }
+#work::after, #about::after, #products::after { content:''; position:absolute; width:620px; height:620px; right:-160px; top:40px;
+  background:url('/assets/img/symbol-light.png') center/contain no-repeat; opacity:.028; pointer-events:none; }
+#about::after { left:-180px; right:auto; top:auto; bottom:-120px; }
+.wrap { position:relative; z-index:2; }
+
+/* headings warm */
+.h-section, .pull, .merch-info h3, .path-title { color:#f3ebdf; }
+.lead, .about-text p { color:#d2c2ad; }
+.about-text strong { color:#f3ebdf; }
+
+/* elements that used the old dark ink as a background */
+.mobile-menu { background:#221a14; }
+.signature { background:#221a14; }
+.tier.highlight .btn-dark { background:#221a14; color:#efe6d8; }
+.waitlist .btn:hover { background:#221a14; color:#efe6d8; }
+.on-dark .for-who div { background:#2b211a; }
+.btn-ghost.light:hover, .on-dark .btn-ghost:hover { background:#efe6d8; color:#2b211a; }
+
+/* press kit */
+.pk-bar { background:rgba(43,33,26,.92); }
+.pk-bar .nav-logo img { filter:none; opacity:1; }
+.cover { background:#33281f; }
+.cover-text .wm { filter:none; opacity:.95; }
+.photos figure { background:#1e1712; }
+.pk-lang { color:var(--ink); border-color:rgba(239,230,216,.3); }

@@ -85,7 +85,7 @@ Goal: a "Shop / Tienda" tab with shirts, cups etc., printed and shipped on deman
 - [x] Bandcamp section on the shop ("Exclusive edits & remixes"): `scripts/sync_bandcamp.py` → `assets/data/bandcamp.json`, refreshed daily by the GitHub Action; listen in-page, buy on Bandcamp.
 - Note: edits of other artists' songs (Facundo Cabral, Tears for Fears, La Masa…) — selling them needs the rights holders' OK; consider name-your-price/free or promo-only.
 - [ ] PayPal checkout on the shop (needs Marcelo's PayPal **Live Client ID** — public, safe to share).
-- [ ] Brand background texture (Marcelo feels the plain cream doesn't reflect his branding) — options proposed 22 Oct.
+- [x] Brand look: "Dusk & ritual" theme approved 23 Oct (warm earth browns, firelight glow, fine grain, faint circle-symbol watermark). Rejected: Andean textile / paper grain / topographic patterns on cream. Theme lives at the end of `assets/css/site.css`; press kit inline styles adapted.
 - [ ] Add more products in Printful (shirts, posters, mugs, totes) → re-run sync.
 - [ ] Accounts connected (Shopify ↔ Printful), first products with mockups.
 - [ ] Build `/shop/` + `/es/tienda/` pages, nav tab, legal pages.
