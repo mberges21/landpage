@@ -68,7 +68,13 @@ Goal: a "Shop / Tienda" tab with shirts, cups etc., printed and shipped on deman
 - [ ] Fix "DESCAIZOS" → DESCALZOS on the Pies Descalzos cover, then re-upscale.
 - High-res photo shoots found in Downloads (Guadalest 5472 px, Els Arcs, "Marcelo Berges/edits" 6000 px) — great for site, press kit and photo-based merch.
 - [ ] Optional: vectorise symbol marks + circle logo for infinite scaling (the 4000 px transparent PNGs already cover shirts/hoodies).
-- [ ] Decide platform and product range.
+- **Decided (22 Oct):** prices shown on the merch pages only; shop embedded in the site's own design (Shopify Buy Button + Printful).
+- **Open — payouts & tax:** Marcelo is registered self-employed in Costa Rica with Costa Rican bank accounts, but lives in Spain. Shopify Payments needs a bank account in a supported country (Costa Rica isn't one) → likely PayPal as payment method, or a Spanish/EU account. Spanish tax residency / IVA obligations to confirm with a gestor before launch.
+- Art rights: covers = Marcelo's; AI images made with Leonardo (some Gemini / Flux) — confirm the plan used allowed commercial use.
+- [x] Decide platform (Shopify + Printful, own design).
+- [ ] Step 1 — Printful account + first products (free, no payment details needed).
+- [ ] Step 2 — Shopify trial + store basics (after payout question is clear).
+- [ ] Step 3 — Buy Button → Claude builds /shop/ + /es/tienda/ + legal pages.
 - [ ] Accounts connected (Shopify ↔ Printful), first products with mockups.
 - [ ] Build `/shop/` + `/es/tienda/` pages, nav tab, legal pages.
 - [ ] Test order end to end.
