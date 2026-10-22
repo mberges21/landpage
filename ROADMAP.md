@@ -56,7 +56,11 @@ Goal: a "Shop / Tienda" tab with shirts, cups etc., printed and shipped on deman
   Skip or fix: compass mandala (AI gibberish text), diamond eye ("MARCÉLO" accent typo), glass-lines piece.
   **Kamatjui** cover is print-ready: cropped 2980 × 2980 master saved in `../merch-artwork/` (outside the public repo) → posters / art prints / totes.
   Check commercial-use rights: AI tool terms for AI images, and the illustrator's permission for commissioned covers (e.g. Kamatjui).
-- [ ] Get 3000 px originals of Gratitud, La gema de la esperanza, unspoken needs.
+- Second batch (22 Oct): Tak'aj ⭐ (mandala works alone on shirts too), Rios, La gema, Pies Descalzos, altiplano collage, new star mark.
+  Covers are Canva exports at 1024–1400 px → re-download from Canva at 3000 px+ (Pro size slider).
+  "PIES DESCAIZOS" typo on the cover → should be DESCALZOS (fix in Canva before printing).
+  All low-res candidates collected in `../merch-artwork/candidates-lowres/`.
+- [ ] Re-export from Canva at 3000 px: Tak'aj, Rios, La gema, Pies Descalzos, Gratitud, unspoken needs (and Tak'aj mandala without text, if possible).
 - [ ] Vectorise symbol marks + circle logo (potrace via Homebrew — ask before installing).
 - [ ] Decide platform and product range.
 - [ ] Accounts connected (Shopify ↔ Printful), first products with mockups.
