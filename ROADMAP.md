@@ -60,6 +60,7 @@ Goal: a "Shop / Tienda" tab with shirts, cups etc., printed and shipped on deman
   Covers are Canva exports at 1024–1400 px → re-download from Canva at 3000 px+ (Pro size slider).
   "PIES DESCAIZOS" typo on the cover → should be DESCALZOS (fix in Canva before printing).
   All low-res candidates collected in `../merch-artwork/candidates-lowres/`.
+- Third batch (22 Oct): **Andean flute banner** 2925 × 1079 — wide format fits a mug wrap almost exactly, also a strong website banner; real identifiable person → needs photographer + model permission for merch. **Café de Tierra** cover 1200 px (Bandcamp size) → find the 3000 px original; poster / tote.
 - [ ] Re-export from Canva at 3000 px: Tak'aj, Rios, La gema, Pies Descalzos, Gratitud, unspoken needs (and Tak'aj mandala without text, if possible).
 - [ ] Vectorise symbol marks + circle logo (potrace via Homebrew — ask before installing).
 - [ ] Decide platform and product range.
