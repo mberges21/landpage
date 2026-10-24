@@ -1,6 +1,143 @@
 {
   "products": [
     {
+      "id": 485022920,
+      "key": "marcelo-s-logo-beanie",
+      "name": "Marcelo's logo Beanie",
+      "garment": "Yupoong 12\" Cuffed Beanie 1501KC",
+      "images": [
+        {
+          "src": "/assets/img/merch/marcelo-s-logo-beanie-mockup.jpg",
+          "label": "mockup"
+        },
+        {
+          "src": "/assets/img/merch/marcelo-s-logo-beanie-front-print.png",
+          "label": "front"
+        }
+      ],
+      "variants": [
+        {
+          "id": 5593014655,
+          "size": "One size",
+          "colour": "Black",
+          "price": 16.0,
+          "currency": "EUR"
+        }
+      ]
+    },
+    {
+      "id": 485022064,
+      "key": "comfy-kamatjui-sweatshirt",
+      "name": "Comfy Kamatjui Sweatshirt",
+      "garment": "Royce Apparel 62320 | Comfy Cord Sweatshirt",
+      "images": [
+        {
+          "src": "/assets/img/merch/comfy-kamatjui-sweatshirt-mockup.jpg",
+          "label": "mockup"
+        }
+      ],
+      "variants": [
+        {
+          "id": 5593008622,
+          "size": "S",
+          "colour": "Black",
+          "price": 57.5,
+          "currency": "EUR"
+        },
+        {
+          "id": 5593008623,
+          "size": "M",
+          "colour": "Black",
+          "price": 57.5,
+          "currency": "EUR"
+        },
+        {
+          "id": 5593008624,
+          "size": "L",
+          "colour": "Black",
+          "price": 57.5,
+          "currency": "EUR"
+        },
+        {
+          "id": 5593008625,
+          "size": "XL",
+          "colour": "Black",
+          "price": 57.5,
+          "currency": "EUR"
+        },
+        {
+          "id": 5593008626,
+          "size": "2XL",
+          "colour": "Black",
+          "price": 59.5,
+          "currency": "EUR"
+        }
+      ]
+    },
+    {
+      "id": 485021424,
+      "key": "vintage-kamatjui-sweatshirt",
+      "name": "Vintage Kamatjui sweatshirt",
+      "garment": "Stanley/Stella SASU043 | Easer Vintage Garment Dyed Sweatshirt",
+      "images": [
+        {
+          "src": "/assets/img/merch/vintage-kamatjui-sweatshirt-mockup.jpg",
+          "label": "mockup"
+        }
+      ],
+      "variants": [
+        {
+          "id": 5593002716,
+          "size": "XS",
+          "colour": "G. Dyed Blue Grey",
+          "price": 52.0,
+          "currency": "EUR"
+        },
+        {
+          "id": 5593002717,
+          "size": "S",
+          "colour": "G. Dyed Blue Grey",
+          "price": 52.0,
+          "currency": "EUR"
+        },
+        {
+          "id": 5593002718,
+          "size": "M",
+          "colour": "G. Dyed Blue Grey",
+          "price": 52.0,
+          "currency": "EUR"
+        },
+        {
+          "id": 5593002719,
+          "size": "L",
+          "colour": "G. Dyed Blue Grey",
+          "price": 52.0,
+          "currency": "EUR"
+        },
+        {
+          "id": 5593002720,
+          "size": "XL",
+          "colour": "G. Dyed Blue Grey",
+          "price": 52.0,
+          "currency": "EUR"
+        },
+        {
+          "id": 5593002721,
+          "size": "2XL",
+          "colour": "G. Dyed Blue Grey",
+          "price": 54.0,
+          "currency": "EUR"
+        },
+        {
+          "id": 5593002723,
+          "size": "3XL",
+          "colour": "G. Dyed Blue Grey",
+          "price": 56.5,
+          "currency": "EUR"
+        }
+      ]
+    },
+    {
       "id": 484133521,
       "key": "kamatjui",
       "name": "Kamatjui",
@@ -11,7 +148,7 @@
           "label": "mockup"
         },
         {
-          "src": "/assets/img/merch/kamatjui-front-print.jpg",
+          "src": "/assets/img/merch/kamatjui-front-print.png",
           "label": "front"
         }
       ],

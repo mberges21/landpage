@@ -1,14 +1,96 @@
 {
+  "_order": [
+    "kamatjui",
+    "vintage-kamatjui-sweatshirt",
+    "comfy-kamatjui-sweatshirt",
+    "marcelo-s-logo-beanie"
+  ],
   "kamatjui": {
     "en": {
       "type": "Crewneck sweatshirt",
       "desc": "Wear the Kamatjui album. The full artwork on the front, the star mark on the back, my circle symbol and the KAMATJUI title on the sleeves.",
-      "details": ["Colour: red", "Unisex fit", "Printed on four sides", "Printed on demand in Europe"]
+      "details": [
+        "Colour: red",
+        "Unisex fit",
+        "Printed on four sides",
+        "Printed on demand in Europe"
+      ]
     },
     "es": {
       "type": "Sudadera de cuello redondo",
       "desc": "Lleva puesto el álbum Kamatjui. La obra completa en el frente, la estrella en la espalda, mi símbolo circular y el título KAMATJUI en las mangas.",
-      "details": ["Color: rojo", "Corte unisex", "Impresa en cuatro lados", "Impresión bajo demanda en Europa"]
+      "details": [
+        "Color: rojo",
+        "Corte unisex",
+        "Impresa en cuatro lados",
+        "Impresión bajo demanda en Europa"
+      ]
+    }
+  },
+  "comfy-kamatjui-sweatshirt": {
+    "en": {
+      "type": "Cord sweatshirt",
+      "desc": "A soft, textured cord sweatshirt in black. The star mark glows on the back, with my circle symbol on the sleeve — quiet on the front, a ritual on the back.",
+      "details": [
+        "Colour: black",
+        "Textured cord fabric",
+        "Star on the back, symbol on the sleeve",
+        "Printed on demand in Europe"
+      ]
+    },
+    "es": {
+      "type": "Sudadera de pana",
+      "desc": "Una sudadera de pana suave y con textura, en negro. La estrella brilla en la espalda y mi símbolo circular va en la manga — discreta por delante, un ritual por detrás.",
+      "details": [
+        "Color: negro",
+        "Tejido de pana con textura",
+        "Estrella en la espalda, símbolo en la manga",
+        "Impresión bajo demanda en Europa"
+      ]
+    }
+  },
+  "vintage-kamatjui-sweatshirt": {
+    "en": {
+      "type": "Vintage sweatshirt",
+      "desc": "Garment-dyed for a soft, washed vintage feel in blue grey. The KAMATJUI · MARCELO BERGES title across the chest and my circle symbol on the sleeve.",
+      "details": [
+        "Colour: blue grey (garment-dyed)",
+        "Relaxed fit",
+        "Title on the chest, symbol on the sleeve",
+        "Printed on demand in Europe"
+      ]
+    },
+    "es": {
+      "type": "Sudadera vintage",
+      "desc": "Teñida en prenda para un tacto suave y un look lavado vintage, en gris azulado. El título KAMATJUI · MARCELO BERGES en el pecho y mi símbolo circular en la manga.",
+      "details": [
+        "Color: gris azulado (teñido en prenda)",
+        "Corte holgado",
+        "Título en el pecho, símbolo en la manga",
+        "Impresión bajo demanda en Europa"
+      ]
+    }
+  },
+  "marcelo-s-logo-beanie": {
+    "en": {
+      "type": "Cuffed beanie",
+      "desc": "A warm black beanie with my circle symbol embroidered on the cuff. Simple, everyday, made to last.",
+      "details": [
+        "Colour: black",
+        "Embroidered symbol",
+        "One size",
+        "Made on demand in Europe"
+      ]
+    },
+    "es": {
+      "type": "Gorro con vuelta",
+      "desc": "Un gorro negro y cálido con mi símbolo circular bordado en la vuelta. Sencillo, para el día a día, hecho para durar.",
+      "details": [
+        "Color: negro",
+        "Símbolo bordado",
+        "Talla única",
+        "Hecho bajo demanda en Europa"
+      ]
     }
   }
 }

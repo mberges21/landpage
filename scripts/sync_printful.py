@@ -47,6 +47,31 @@ def slug(text):
     return re.sub(r'[^a-z0-9]+', '-', text.lower()).strip('-')
 
 
+def corner_is_transparent(path):
+    """True if a PNG's top-left pixel is see-through (i.e. a real cut-out background).
+    Printful marks most previews as 'has alpha' even when they're fully opaque."""
+    import struct, zlib
+    with open(path, 'rb') as f:
+        data = f.read()
+    if data[:8] != b'\x89PNG\r\n\x1a\n':
+        return False
+    width, _h, depth, colour = struct.unpack('>IIBB', data[16:26])
+    bpp = {6: 4, 4: 2}.get(colour)           # 6 = RGBA, 4 = grey + alpha (8-bit each)
+    if not bpp or depth != 8:
+        return False
+    idat, i = b'', 8
+    while i < len(data):
+        n = struct.unpack('>I', data[i:i + 4])[0]
+        if data[i + 4:i + 8] == b'IDAT':
+            idat += data[i + 8:i + 8 + n]
+            if len(idat) > 65536:
+                break
+        i += 12 + n
+    first_row = zlib.decompressobj().decompress(idat, 1 + width * bpp)
+    # first pixel of the first row is unaffected by PNG row filters, so its alpha byte is exact
+    return len(first_row) > bpp and first_row[bpp] < 250
+
+
 def download(url, name):
     os.makedirs(IMG_DIR, exist_ok=True)
     ext = os.path.splitext(url.split('?')[0])[1] or '.png'
@@ -54,9 +79,16 @@ def download(url, name):
     req = urllib.request.Request(url, headers={'User-Agent': 'marcelo-berges.com merch sync'})
     with urllib.request.urlopen(req, timeout=60) as r, open(path, 'wb') as f:
         f.write(r.read())
-    # shrink to a web-friendly JPEG with macOS's built-in sips (keeps pages fast)
+    # shrink with macOS's built-in sips (keeps pages fast). Images with a transparent
+    # background stay PNG so they sit cleanly on the site's coloured background.
+    dims = subprocess.run(['sips', '-g', 'pixelWidth', '-g', 'pixelHeight', path], capture_output=True, text=True).stdout
+    longest = max([int(n) for n in re.findall(r'pixel(?:Width|Height): (\d+)', dims)] or [0])
+    if corner_is_transparent(path):
+        if longest > 900:                     # sips -Z would also enlarge small images, so only shrink
+            subprocess.run(['sips', '-Z', '900', path], capture_output=True)
+        return '/assets/img/merch/' + name + ext
     jpg = os.path.join(IMG_DIR, name + '.jpg')
-    if subprocess.run(['sips', '-Z', '1200', '-s', 'format', 'jpeg', '-s', 'formatOptions', '82',
+    if subprocess.run(['sips', '-Z', str(min(1200, longest or 1200)), '-s', 'format', 'jpeg', '-s', 'formatOptions', '82',
                        path, '--out', jpg], capture_output=True).returncode == 0:
         if path != jpg:
             os.remove(path)
@@ -65,9 +97,11 @@ def download(url, name):
 
 
 def size_of(variant_name):
-    # "Kamatjui / M" or "Kamatjui / Black / M" → last part is usually the size
-    part = variant_name.split('/')[-1].strip()
-    return part
+    # "Kamatjui / M" or "Kamatjui / Black / M" → last part is usually the size;
+    # one-size items (beanies, mugs…) have no "/" at all
+    if '/' not in variant_name:
+        return 'One size'
+    return variant_name.split('/')[-1].strip()
 
 
 def main():
@@ -94,7 +128,7 @@ def main():
                 continue
             catalog_name = v['product'].get('name', '')       # e.g. "Cotton Heritage M2480 (Team Red / M)"
             colour = ''
-            m = re.search(r'\(([^/)]+)\s*/', catalog_name)
+            m = re.search(r'\(([^/)]+?)\s*(?:/|\))', catalog_name)   # "(Black / M)" or "(Black)
             if m:
                 colour = m.group(1).strip()
             vs.append({

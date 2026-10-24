@@ -44,6 +44,12 @@
     return;
   }
 
+  // display order from merch-extra.json "_order"; new products not listed there go last
+  const order = extra._order || [];
+  const rank = k => (order.indexOf(k) + 1) || 999;
+  data.products.sort((a, b) => rank(a.key) - rank(b.key));
+  const sizeLabel = s => (es && s === 'One size') ? 'Talla única' : s;
+
   grid.innerHTML = data.products.map(p => {
     const x = (extra[p.key] || {})[es ? 'es' : 'en'] || {};
     const prices = p.variants.map(v => v.price);
@@ -52,7 +58,7 @@
     const imgs = p.images.map((im, i) =>
       `<button type="button" class="thumb${i ? '' : ' on'}" data-src="${esc(im.src)}" aria-label="${esc(p.name)} ${i + 1}"><img src="${esc(im.src)}" alt="" loading="lazy"></button>`).join('');
     const sizes = p.variants.map((v, i) =>
-      `<button type="button" class="size${i ? '' : ' on'}" data-variant="${v.id}">${esc(v.size)}</button>`).join('');
+      `<button type="button" class="size${i ? '' : ' on'}" data-variant="${v.id}">${esc(sizeLabel(v.size))}</button>`).join('');
     return `
       <article class="merch-card reveal on" data-key="${esc(p.key)}">
         <div class="merch-gallery">
@@ -96,7 +102,7 @@
       const qty = Math.max(1, Math.min(10, parseInt(card.querySelector('.merch-qty input').value, 10) || 1));
       const line = cart.find(l => l.variant === v.id);
       if (line) line.qty = Math.min(10, line.qty + qty);
-      else cart.push({ variant: v.id, product: p.name, size: v.size, colour: v.colour, price: v.price, currency: v.currency, qty });
+      else cart.push({ variant: v.id, product: p.name, size: sizeLabel(v.size), colour: v.colour, price: v.price, currency: v.currency, qty });
       save(); renderCart();
       addBtn.textContent = T.added;
       setTimeout(() => (addBtn.textContent = T.add), 1600);
