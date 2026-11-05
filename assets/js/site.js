@@ -89,13 +89,13 @@ function suggestEmail(email) {
   return best ? email.slice(0, at + 1) + best : null;
 }
 
-const form = document.getElementById('contactForm');
-if (form) {
-  const status = document.getElementById('formStatus');
+// every form on the page (merch order, Max for Live request…) sends the same way
+document.querySelectorAll('form.form').forEach(form => {
+  const status = form.querySelector('.form-note');
   const button = form.querySelector('button[type="submit"]');
   const buttonText = button.textContent;
-  const emailInput = form.querySelector('#f-email');
-  const hint = document.getElementById('emailHint');
+  const emailInput = form.querySelector('input[type="email"]');
+  const hint = form.querySelector('.email-hint');
   let resending = false;
 
   const checkEmail = () => {
@@ -104,8 +104,8 @@ if (form) {
     hint.hidden = !s;
     if (s) hint.innerHTML = `${L.didYouMean} <button type="button">${esc(s)}</button>?`;
   };
-  emailInput.addEventListener('blur', checkEmail);
-  emailInput.addEventListener('input', () => { if (hint && !hint.hidden) checkEmail(); });
+  emailInput?.addEventListener('blur', checkEmail);
+  emailInput?.addEventListener('input', () => { if (hint && !hint.hidden) checkEmail(); });
   hint?.addEventListener('click', e => {
     if (e.target.tagName !== 'BUTTON') return;
     emailInput.value = e.target.textContent;
@@ -151,11 +151,11 @@ if (form) {
     } catch (err) {
       button.disabled = false;
       button.textContent = buttonText;
-      status.innerHTML = `${L.error} <a href="mailto:marcelo@marcelo-berges.com">marcelo@marcelo-berges.com</a>.`;
-      status.classList.add('error');
+      if (status) status.innerHTML = `${L.error} <a href="mailto:marcelo@marcelo-berges.com">marcelo@marcelo-berges.com</a>.`;
+      status?.classList.add('error');
     }
   });
-}
+});
 
 // Decorative waveform (Studio)
 (function () {
