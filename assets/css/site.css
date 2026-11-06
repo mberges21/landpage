@@ -604,9 +604,9 @@ nav.scrolled .nav-links a.lang-switch { border-color:rgba(239,230,216,.25); }
 @media(max-width:860px) { .m4l-grid { grid-template-columns:minmax(0, 1fr); } }
 .m4l-card { background:var(--card); border:1px solid var(--line); display:flex; flex-direction:column; min-width:0; transition:box-shadow .5s; }
 .m4l-card:hover { box-shadow:0 30px 70px -30px rgba(224,122,60,.25); }
-.m4l-shot { background:#120e0b; border-bottom:1px solid var(--line); aspect-ratio:2.6 / 1; padding:clamp(14px, 2vw, 22px);
+.m4l-shot { background:#120e0b; border-bottom:1px solid var(--line); aspect-ratio:2 / 1; padding:clamp(8px, 1.2vw, 12px);
   display:flex; align-items:center; justify-content:center; overflow:hidden; }
-.m4l-shot img { max-width:100%; max-height:100%; width:auto; height:auto; image-rendering:pixelated; }
+.m4l-shot img { max-width:100%; max-height:100%; width:auto; height:auto; } /* smooth scaling: "pixelated" drops pixels of the small text when shrinking */
 .m4l-body { flex:1; padding:clamp(22px, 3vw, 30px); display:flex; flex-direction:column; gap:12px; }
 .m4l-meta { font-family:'DM Mono',monospace; font-size:.66rem; letter-spacing:.2em; text-transform:uppercase; color:var(--clay); }
 .m4l-body h3 { font-family:'Cormorant',serif; font-size:clamp(1.9rem, 3vw, 2.4rem); font-weight:600; line-height:1; color:#f3ebdf; }
