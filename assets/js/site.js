@@ -182,7 +182,21 @@ const liveDialog = document.getElementById('live');
 if (liveDialog && liveDialog.showModal) {
   const open = e => { if (e) e.preventDefault(); liveDialog.showModal(); };
   document.querySelectorAll('a[href="#live"]').forEach(a => a.addEventListener('click', open));
-  liveDialog.querySelector('.live-close').addEventListener('click', () => liveDialog.close());
-  liveDialog.addEventListener('click', e => { if (e.target === liveDialog) liveDialog.close(); });
+  // a flyer opens big in the same window; ✕, Esc, the image or outside brings back the card
+  const zoom = liveDialog.querySelector('.live-zoom'), zoomImg = zoom.querySelector('img');
+  const unzoom = () => { liveDialog.classList.remove('zoomed'); zoom.setAttribute('aria-hidden', 'true'); };
+  const back = () => liveDialog.classList.contains('zoomed') ? unzoom() : liveDialog.close();
+  liveDialog.querySelectorAll('.live-flyers a').forEach(a => a.addEventListener('click', e => {
+    e.preventDefault();
+    const img = a.querySelector('img');
+    zoomImg.src = a.getAttribute('href'); zoomImg.alt = img ? img.alt : '';
+    liveDialog.classList.add('zoomed'); zoom.removeAttribute('aria-hidden');
+    liveDialog.scrollTop = 0;
+  }));
+  zoomImg.addEventListener('click', unzoom);
+  liveDialog.querySelector('.live-close').addEventListener('click', back);
+  liveDialog.addEventListener('click', e => { if (e.target === liveDialog) back(); });
+  liveDialog.addEventListener('cancel', e => { if (liveDialog.classList.contains('zoomed')) { e.preventDefault(); unzoom(); } });
+  liveDialog.addEventListener('close', unzoom);
   if (location.hash === '#live') open();
 }
