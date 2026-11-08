@@ -171,3 +171,8 @@ document.querySelectorAll('form.form').forEach(form => {
 })();
 
 document.querySelectorAll('.yr').forEach(el => el.textContent = new Date().getFullYear());
+
+// Event blocks hide themselves once the event is over (data-until = an ISO date)
+document.querySelectorAll('[data-until]').forEach(el => {
+  if (Date.now() > Date.parse(el.dataset.until)) el.remove();
+});
