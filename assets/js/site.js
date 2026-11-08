@@ -176,3 +176,13 @@ document.querySelectorAll('.yr').forEach(el => el.textContent = new Date().getFu
 document.querySelectorAll('[data-until]').forEach(el => {
   if (Date.now() > Date.parse(el.dataset.until)) el.remove();
 });
+
+// The next-live card in the hero opens the full info in a dialog (Esc, ✕ or a click outside closes it)
+const liveDialog = document.getElementById('live');
+if (liveDialog && liveDialog.showModal) {
+  const open = e => { if (e) e.preventDefault(); liveDialog.showModal(); };
+  document.querySelectorAll('a[href="#live"]').forEach(a => a.addEventListener('click', open));
+  liveDialog.querySelector('.live-close').addEventListener('click', () => liveDialog.close());
+  liveDialog.addEventListener('click', e => { if (e.target === liveDialog) liveDialog.close(); });
+  if (location.hash === '#live') open();
+}
