@@ -679,3 +679,7 @@ nav.scrolled .nav-links a.lang-switch { border-color:rgba(239,230,216,.25); }
 .nav-inner { max-width:1320px; }
 .nav-links { gap:clamp(14px,1.5vw,26px); }
 .nav-links a { letter-spacing:.13em; }
+
+/* "oro en la sombra": the symbol watermarks come alive (assets/js/oro.js); content stays above the light */
+.oro-on::after { display:none; }
+section > .wrap, footer > *:not(canvas) { position:relative; z-index:2; }
