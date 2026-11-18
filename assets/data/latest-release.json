@@ -1,10 +1,15 @@
 {
+  "pinned": true,
   "deezer_id": 1129050491,
   "name": "Angels",
   "type": "single",
-  "label": "Resueño",
-  "release_date": "2026-11-10",
-  "cover": "https://cdn-images.dzcdn.net/images/cover/d2db1f3b3f0f57f0ee53fae117c41827/1000x1000-000000-80-0-0.jpg",
+  "credit": "Marcelo Bergés & Fanny Stovander",
+  "label": "Resueño · Cacao Dance Vol. 6",
+  "release_date": "2026-11-11",
+  "cover": "/assets/img/angels/cover.jpg",
   "deezer_url": "https://www.deezer.com/album/1129050491",
-  "spotify_url": "https://open.spotify.com/search/Angels%20Marcelo%20Berges"
+  "spotify_url": "https://open.spotify.com/album/6aRN4wXtuYhVfU0deEj11p",
+  "apple_url": "https://music.apple.com/us/album/angels-single/6826314874",
+  "page": "/angels/",
+  "page_es": "/es/angels/"
 }

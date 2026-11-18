@@ -200,3 +200,15 @@ if (liveDialog && liveDialog.showModal) {
   liveDialog.addEventListener('close', unzoom);
   if (location.hash === '#live') open();
 }
+
+// Release pages: the promo video starts muted (browsers block sound on autoplay); this button turns sound on/off
+document.querySelectorAll('[data-sound]').forEach(btn => {
+  const video = btn.parentElement.querySelector('video');
+  if (!video) return;
+  btn.addEventListener('click', () => {
+    video.muted = !video.muted;
+    if (!video.muted) { video.currentTime = 0; video.play().catch(() => {}); }
+    btn.setAttribute('aria-pressed', String(!video.muted));
+    btn.textContent = video.muted ? btn.dataset.off : btn.dataset.on;
+  });
+});

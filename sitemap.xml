@@ -70,4 +70,16 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/shop/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/tienda/"/>
   </url>
+  <url>
+    <loc>https://marcelo-berges.com/angels/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/angels/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/angels/"/>
+  </url>
+  <url>
+    <loc>https://marcelo-berges.com/es/angels/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marcelo-berges.com/angels/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marcelo-berges.com/es/angels/"/>
+  </url>
 </urlset>

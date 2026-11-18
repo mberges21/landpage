@@ -21,10 +21,13 @@
       <div class="release-info">
         <small>${[kind, date].filter(Boolean).map(esc).join(' · ')}</small>
         <b>${esc(r.name)}</b>
-        <span>${esc(r.label)}</span>
+        <span>${r.credit ? esc(r.credit) + '<br>' : ''}${esc(r.label)}</span>
         <div class="release-links">
           <a class="btn btn-primary" href="${esc(r.spotify_url)}" target="_blank" rel="noopener">${es ? 'Escuchar en Spotify' : 'Listen on Spotify'} ↗</a>
-          <a class="text-link" href="${esc(r.deezer_url)}" target="_blank" rel="noopener">Deezer ↗</a>
+          ${r.apple_url
+            ? `<a class="text-link" href="${esc(r.apple_url)}" target="_blank" rel="noopener">Apple Music ↗</a>`
+            : `<a class="text-link" href="${esc(r.deezer_url)}" target="_blank" rel="noopener">Deezer ↗</a>`}
+          ${(es ? r.page_es : r.page) ? `<a class="text-link" href="${esc(es ? r.page_es : r.page)}">${es ? 'Ver el vídeo' : 'Watch the video'} →</a>` : ''}
         </div>
       </div>`;
     cards.forEach(el => {

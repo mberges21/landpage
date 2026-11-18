@@ -683,3 +683,39 @@ nav.scrolled .nav-links a.lang-switch { border-color:rgba(239,230,216,.25); }
 /* "oro en la sombra": the symbol watermarks come alive (assets/js/oro.js); content stays above the light */
 .oro-on::after { display:none; }
 section > .wrap, footer > *:not(canvas) { position:relative; z-index:2; }
+
+/* ── RELEASE PAGE (/angels/): vertical video + links, everything above the fold on desktop ── */
+.release-page { position:relative; background:var(--night); color:var(--white); padding:clamp(110px,14vw,150px) 0 clamp(64px,8vw,100px); }
+.release-grid { display:grid; grid-template-columns:minmax(0,380px) minmax(0,1fr); gap:clamp(32px,6vw,80px); align-items:start; }
+.release-video { position:relative; margin:0; position:sticky; top:96px; }
+.release-video video { display:block; width:100%; height:auto; aspect-ratio:9/16; object-fit:cover; border-radius:10px; background:#000; box-shadow:0 24px 60px -18px rgba(0,0,0,.7); }
+.sound-btn { position:absolute; right:12px; bottom:12px; font-family:'DM Mono',monospace; font-size:.62rem; letter-spacing:.18em; text-transform:uppercase; color:var(--white); background:rgba(20,16,12,.7); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px); border:1px solid rgba(224,122,60,.55); border-radius:999px; padding:10px 14px; cursor:pointer; }
+.sound-btn:hover, .sound-btn[aria-pressed="true"] { background:var(--terra); border-color:var(--terra); }
+.release-body .eyebrow { display:block; }
+.release-body .h-display { color:var(--white); font-size:clamp(3.4rem,9vw,7rem); margin:14px 0 8px; font-weight:300; letter-spacing:.02em; }
+.release-artists { font-family:'Cormorant',serif; font-size:clamp(1.4rem,2.4vw,1.9rem); font-style:italic; margin:0 0 10px; }
+.release-artists a { color:var(--white); text-decoration:underline; text-decoration-color:rgba(224,122,60,.6); text-underline-offset:4px; }
+.release-artists a:hover { color:var(--terra2); }
+.release-meta { font-family:'DM Mono',monospace; font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; color:rgba(247,244,238,.6); margin:0 0 28px; }
+.release-platforms { gap:10px; margin-bottom:22px; }
+.release-platforms .btn { padding:14px 20px; font-size:.68rem; }
+.release-embed { border:none; border-radius:12px; display:block; margin-bottom:34px; }
+.release-story { margin:0 0 34px; padding:4px 0 4px 22px; border-left:2px solid var(--terra2); max-width:60ch; }
+.release-story p { font-family:'Cormorant',serif; font-size:clamp(1.15rem,1.6vw,1.35rem); line-height:1.55; color:rgba(247,244,238,.82); margin:0 0 14px; }
+.release-story p:last-child { margin-bottom:0; }
+.release-comp { display:grid; grid-template-columns:88px 1fr; gap:18px; align-items:center; padding:16px; border:1px solid var(--line-d); border-radius:10px; background:rgba(247,244,238,.03); max-width:560px; }
+.release-comp img { width:88px; height:88px; object-fit:cover; border-radius:4px; }
+.release-comp small { display:block; font-family:'DM Mono',monospace; font-size:.6rem; letter-spacing:.2em; text-transform:uppercase; color:var(--terra2); margin-bottom:4px; }
+.release-comp b { display:block; font-family:'Cormorant',serif; font-size:1.4rem; font-weight:600; line-height:1.1; }
+.release-comp span { display:block; font-size:.85rem; color:rgba(247,244,238,.6); margin:4px 0 8px; }
+.release-book { display:flex; justify-content:space-between; align-items:center; gap:28px; flex-wrap:wrap; }
+@media(max-width:820px) {
+  .release-grid { grid-template-columns:1fr; }
+  .release-video { position:relative; top:auto; max-width:340px; margin:0 auto; }
+  .release-body { text-align:left; }
+}
+
+/* hero "new single" card: same frame as the next-live card, with a tiny looping video */
+.hero-promos { display:flex; flex-wrap:wrap; gap:0 12px; }
+.hero-live video { width:56px; height:84px; object-fit:cover; border-radius:4px; flex-shrink:0; background:#000; transition:transform .4s; }
+.hero-live:hover video { transform:scale(1.04); }
